@@ -31,7 +31,6 @@ app.get('', async (req, res) => {
 
             ytdl.getInfo(req.body.data).then((info) => {
                 ffm(__dirname + "/song.mp3")
-                    .setFfmpegPath("C:/Users/sslag/Downloads/ffmpeg-master-latest-win64-gpl/ffmpeg-master-latest-win64-gpl/bin/ffmpeg.exe")
                     .addOutputOption("-metadata", "comment=Cover (front)")
                     .addOutputOption("-metadata", "title=" + title )
                     .addOutputOption("-metadata", "artist=" + chname )
