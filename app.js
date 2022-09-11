@@ -50,7 +50,7 @@ app.get('', async (req, res) => {
 
 
 app.get('/download', function(req, res) {
-    res.download(__dirname + "/" + bbz + ".mp3")
+    res.download("app.js")
 })
 
 app.listen(process.env.PORT || 3000, () => console.log('Started'))
