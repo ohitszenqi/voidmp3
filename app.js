@@ -6,7 +6,6 @@ const app = express()
 const port = 3000
 const fs = require('fs') 
 const path = require('path')
-const io = require('socket.io')(30);
 const ffm = require('fluent-ffmpeg')
 const dl = require('image-downloader')
 
