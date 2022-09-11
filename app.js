@@ -3,7 +3,7 @@ const bodyparser = require('body-parser')
 const encoder = bodyparser.urlencoded({extended: false})
 const ytdl = require('ytdl-core')
 const app = express()
-const port = 3000
+const PORT = 3000
 const fs = require('fs') 
 const path = require('path')
 const ffm = require('fluent-ffmpeg')
@@ -54,4 +54,4 @@ app.get('/download', function(req, res) {
     res.download(__dirname + "/" + bbz + ".mp3")
 })
 
-app.listen(port, () => console.log('Started'))
+app.listen(process.env.PORT || 3000, () => console.log('Started'))
