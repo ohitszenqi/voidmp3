@@ -1,0 +1,44 @@
+.ttl {
+    text-align: center;
+    color: #9143b5;
+    font-family: Arial, sans-serif;
+    position: relative;
+    top: 30px;
+}
+
+.in {
+    background-color: #302c3c;
+    border: 2px solid #9143b5;
+    outline: none;
+    border-radius: 25px;
+    position: relative;
+    top: 40px;
+    color: #bd52ee;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.sb {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    top: 40px;
+    background-color: #302c3c;
+    border: 2px solid #9143b5;
+    color: #bd52ee;
+    border-radius: 25px;
+}
+
+h3 {
+    text-align: center;
+    position: relative;
+    color: #bd52ee;
+    font-family: Arial, sans-serif;
+    top: 40px;
+    font-size: 12px;
+}
+body {
+    background-color: #302c3c;
+}

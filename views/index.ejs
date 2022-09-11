@@ -1,0 +1,47 @@
+<h1 class="ttl">Download a music</h1>
+<form method="post" action="http://127.0.0.1:3000/link">
+<input class="in" id="in" placeholder="Ples give me lenk">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+</form>
+<input class="sb" id="sb" value="Submit" type="submit" />
+<h3>ez yt downloader website made by sean :)</h3>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+<script>
+    function matchYoutubeUrl(url) {
+            var p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+            if(url.match(p)){
+                return url.match(p)[1];
+            }
+            return false;
+    }
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    $("#sb").click(function() {
+        let input = $("#in").val()
+        
+        if (matchYoutubeUrl(input)) {
+            $('h3').text("ez yt downloader website made by sean :)")
+            $.ajax({ 
+            url: '/sb',
+            type: 'POST',
+            cache: false, 
+            data: { 'data': input}, 
+            success: function(data){
+            }
+            , error: function(jqXHR, textStatus, err){
+                alert('text status '+textStatus+', err '+err)
+            }
+            })
+        } else {
+            $('h3').text("we only accept youtube links :(")
+            sleep(10000).then(() => {
+                if ($('h3').text() === "ez yt downloader website made by sean :)") return;
+                $('h3').text("ez yt downloader website made by sean :)")
+            })
+        }
+    })
+</script>
